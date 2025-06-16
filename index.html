@@ -1,150 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>5-Minute Dream Capture Protocol</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
-
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9fbfd;
-    color: #212121;
-    line-height: 1.6;
-  }
-  .container {
-    max-width: 520px;
-    margin: 60px auto 80px;
-    background: #fff;
-    padding: 40px 32px;
-    border-radius: 12px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  }
-  h1 {
-    font-family: 'Lora', serif;
-    font-weight: 600;
-    font-size: 2.4rem;
-    margin-bottom: 12px;
-    color: #0a2540;
-  }
-  h2 {
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin: 24px 0 12px;
-    color: #0a2540;
-  }
-  p.lead {
-    font-size: 1.1rem;
-    margin-bottom: 32px;
-    font-weight: 500;
-    color: #3c3c3c;
-  }
-  blockquote {
-    font-style: italic;
-    color: #4a90e2;
-    border-left: 4px solid #4a90e2;
-    padding-left: 12px;
-    margin-bottom: 36px;
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 36px;
-  }
-  ul li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 18px;
-    font-weight: 500;
-    font-size: 1rem;
-    color: #2c3e50;
-  }
-  ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #4a90e2;
-    font-weight: 700;
-    font-size: 1.1rem;
-    top: 1px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  input[type="email"] {
-    font-size: 1rem;
-    padding: 14px 16px;
-    border: 1.8px solid #cbd5e1;
-    border-radius: 8px;
-    transition: border-color 0.3s ease;
-  }
-  input[type="email"]:focus {
-    border-color: #4a90e2;
-    outline: none;
-  }
-  button {
-    background-color: #4a90e2;
-    border: none;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 16px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #357abd;
-  }
-  @media (max-width: 600px) {
-    .container {
-      margin: 40px 16px 60px;
-      padding: 32px 24px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5-Minute Dream Capture Protocol | Lucid Dream Often</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f9fbfd 0%, #e6f0fa 100%);
+      color: #1f2937;
+      line-height: 1.7;
     }
-  }
-</style>
+    .container {
+      max-width: 600px;
+      margin: 4rem auto 6rem;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      color: #0a2540;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 2rem;
+    }
+    blockquote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: #2563eb;
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.5rem;
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      margin: 2.5rem 0;
+    }
+    blockquote small {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #0a2540;
+      margin: 2rem 0 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2.5rem;
+    }
+    ul li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+    ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 1.2rem;
+      top: 0.1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    input[type="email"] {
+      padding: 0.875rem 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input[type="email"]:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      outline: none;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+      font-size: 1.125rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .trust-signal {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    .trust-signal img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    @media (max-width: 640px) {
+      .container {
+        margin: 2rem 1rem 4rem;
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .lead {
+        font-size: 1.1rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container" role="main" aria-label="Lead Magnet Landing Page">
+    <h1>The 5-Minute Dream Capture Protocol</h1>
+    <p class="lead">
+      How 7-Figure Creators Remember 5+ High-Value Dreams Every Morning (Without Hours of Journaling)
+    </p>
+    <blockquote>
+      You're Forgetting Million-Dollar Ideas in Your Sleep.<br />
+      Discover the 3-step protocol to lock in 5+ vivid dreams every morning—before your coffee.<br />
+      <small><em>Used by creators turning dreams into campaigns, products, and pitches.</em></small>
+    </blockquote>
 
-<div class="container" role="main" aria-label="Lead Magnet Landing Page">
-  <h1>The 5-Minute Dream Capture Protocol</h1>
-  <p class="lead">
-    How 7-Figure Creators Remember 5+ High-Value Dreams Every Morning (Without Hours of Journaling)
-  </p>
-  <blockquote>
-    You're Forgetting the Million-Dollar Ideas You Had in Your Sleep.<br />
-    Here’s the 3-step protocol to lock in 5+ vivid dreams per morning—before coffee.<br />
-    <small><em>(Used by creators turning dreams into campaigns, products, and pitches.)</em></small>
-  </blockquote>
+    <h2>What You'll Get in This PDF:</h2>
+    <ul>
+      <li><strong>The “Before Bed” Cue</strong> – A priming sentence to seed your brain with a creative/business prompt, so your subconscious works while you sleep.</li>
+      <li><strong>The “90-Second Rule”</strong> – Exactly what to do immediately after waking to prevent dream details from slipping away.</li>
+      <li><strong>The Capture Framework</strong> – A lightning-fast method to turn raw, fragmented dream impressions into usable ideas for your creativity and projects.</li>
+    </ul>
 
-  <h2>What You'll Get Inside This PDF:</h2>
-  <ul>
-    <li><strong>The “Before Bed” Cue</strong> – A priming sentence to seed your brain with a creative/business prompt—so your subconscious starts working while you sleep.</li>
-    <li><strong>The “90-Second Rule”</strong> – Exactly what to do immediately after waking to prevent dream details from slipping away.</li>
-    <li><strong>The Capture Framework</strong> – A lightning-fast method to turn raw, fragmented dream impressions into usable ideas that fuel your creativity and projects.</li>
-  </ul>
+    <h2>Exclusive Bonuses:</h2>
+    <ul>
+      <li>Mini Checklist – Keep it on your nightstand for quick daily use.</li>
+      <li>Dreams to Dollars Breakdown – A fast story-format guide on how your dreams turn into real income.</li>
+    </ul>
 
-  <h2>Bonus Inside:</h2>
-  <ul>
-    <li>Mini Checklist — Keep it on your nightstand for quick daily use.</li>
-    <li>Dreams to Dollars Breakdown — A fast story-format explanation of how your dream data turns into real income.</li>
-  </ul>
+    <form action="https://your-email-service.com/subscribe" method="POST" aria-label="Subscribe to get the 5-Minute Dream Capture Protocol">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your best email address" 
+        aria-required="true" 
+        required
+      />
+      <button type="submit">Get Your Free Protocol Now</button>
+    </form>
 
-  <form action="https://your-email-service.com/subscribe" method="POST" aria-label="Subscribe to get the 5-Minute Dream Capture Protocol">
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Your best email address" 
-      aria-required="true" 
-      required
-    />
-    <button type="submit">Get The 5-Minute Dream Capture Protocol</button>
-  </form>
-</div>
-
+    <div class="trust-signal">
+      <img src="https://via.placeholder.com/40?text=User" alt="User avatar">
+      Trusted by over 500+ creators, including <strong>Sarah M., Creative Director</strong>: “This protocol turned my dreams into a $500K campaign!”
+    </div>
+  </div>
 </body>
-  </html>
+</html>
